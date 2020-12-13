@@ -191,4 +191,3 @@ let dwayneObject = {
 
 //Act. 6 
 
-console.log(suma1)
