@@ -171,6 +171,20 @@ console.log(sandwichOrder)
 
 //Activity 5//Once again, we concern ourselves with our friend Dwayne:
 
+// Once again, we concern ourselves with our friend Dwayne:
+// let dwayneObject = {
+//   firstName: "Dwayne",
+//   nickName: "The Rock",
+//   lastName: "Johnson",
+//   favoriteFood: "Eggs",
+//   hobbies: ["jumping out of planes", "personally holding the  San Andreas fault together", "building incredible muscle mass"]
+// }
+
+// function printHobbies(){
+// // YOUR CODE GOES HERE
+// }
+
+
 let dwayneObject = {
     firstName: "Dwayne",
     nickName: "The Rock",
@@ -191,3 +205,100 @@ let dwayneObject = {
 
 //Act. 6 
 
+let spaceship = {
+    crew: {
+      captain: { 
+        name: 'Lily', 
+        degree: 'Computer Engineering', 
+        cheerTeam() { console.log('You got this!') } 
+      },
+      'chief officer': { 
+        name: 'Dan', 
+        degree: 'Aerospace Engineering', 
+        agree() { console.log('I agree, captain!') } 
+      },
+      medic: { 
+        name: 'Clementine', 
+        degree: 'Physics', 
+        announce() { console.log(`Jets on!`) } },
+      translator: {
+        name: 'Shauna', 
+        degree: 'Conservation Science', 
+        powerFuel() { console.log('The tank is full!') } 
+      }
+    }
+  }; 
+   
+  // for...in
+  for (let crewMember in spaceship.crew) {
+    console.log(`${crewMember}: ${spaceship.crew[crewMember].name}`);
+  }
+
+  //Activity 6
+
+  let partyGuests = [
+    {
+      name: "Sam",
+      age: 18
+    },
+    {
+      name: "Jerry",
+      age: 45
+    },
+    {
+      name: "Lila",
+      age: 29
+    },
+    {
+      name: "Mary",
+      age: 68
+    },
+    {
+      name: "Todd",
+      age: 10
+    }
+  ]
+  
+
+  let drink = ''
+  let noDrink =''
+  function ageChecker(){
+      for(i = 0; i < partyGuests.length; i++) {
+          if (partyGuests[i].age >= 21){
+              drink = drink + `${partyGuests[i].name}, `
+          }
+          else if (partyGuests[i].age < 21){
+            noDrink = noDrink + `${partyGuests[i].name}, `
+          }
+      }
+   
+
+  }
+  
+  ageChecker()
+
+
+
+
+
+drinkA = drink.substring(0, 12)
+drinkB = drink.substring(13,17)
+noDrinkA = noDrink.substring(0, 3)
+noDrinkB = noDrink.substring(5, 9)
+// console.log(noDrink.length)
+// console.log(noDrinkB)
+// console.log(noDrinkA)
+// console.log(drink)
+// console.log(drinkA)
+// console.log(drinkB)
+console.log(`${drinkA} and ${drinkB} can drink. ${noDrinkA} and ${noDrinkB} cannot drink.`)
+
+
+
+//Fill in the ageChecker function so that it does the following things:
+
+// Loop through the partyGuests and check if each guest is at least 21.
+// Build a sentence or two about who can drink and who can't. (Example: " "Jery, Lila, and Mary can drink. Sam and Todd are too young.")
+// Log the sentnece to the console.
+  
+ 
