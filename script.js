@@ -260,45 +260,104 @@ let spaceship = {
   ]
   
 
-  let drink = ''
-  let noDrink =''
+  // let drink = ''
+  // let noDrink =''
+  // let drink = []
+  // let noDrink = []
   function ageChecker(){
+   let drink = []
+   let noDrink = []
       for(i = 0; i < partyGuests.length; i++) {
           if (partyGuests[i].age >= 21){
-              drink = drink + `${partyGuests[i].name}, `
+              //drink = drink + `${partyGuests[i].name}, `
+              drink.push(partyGuests[i].name)
+              drinkString = drink.join(', ')
+            }
+              
+          else if (partyGuests[i].age < 21) {
+            //noDrink = noDrink + `${partyGuests[i].name}, `
+            noDrink.push(partyGuests[i].name)
+            noDrinkString = noDrink.join(', ')
           }
-          else if (partyGuests[i].age < 21){
-            noDrink = noDrink + `${partyGuests[i].name}, `
-          }
+         
       }
-   
+
+      console.log(drinkString)
+      console.log(noDrinkString)
+   //return drink
+  //  return noDrink
 
   }
-  
-  ageChecker()
+ageChecker()
+console.log(`${drinkString} can drink.`)
+ console.log(`${noDrinkString} can't drink.`)
 
-
-
-
-
-drinkA = drink.substring(0, 12)
-drinkB = drink.substring(13,17)
-noDrinkA = noDrink.substring(0, 3)
-noDrinkB = noDrink.substring(5, 9)
-// console.log(noDrink.length)
-// console.log(noDrinkB)
-// console.log(noDrinkA)
-// console.log(drink)
-// console.log(drinkA)
-// console.log(drinkB)
-console.log(`${drinkA} and ${drinkB} can drink. ${noDrinkA} and ${noDrinkB} cannot drink.`)
-
-
-
-//Fill in the ageChecker function so that it does the following things:
-
-// Loop through the partyGuests and check if each guest is at least 21.
-// Build a sentence or two about who can drink and who can't. (Example: " "Jery, Lila, and Mary can drink. Sam and Todd are too young.")
-// Log the sentnece to the console.
-  
  
+  //Act 7 Pt 2
+
+  let partyGuestList = [
+    {
+      name: "Sam",
+      age: 18
+    },
+    {
+      name: "Jerry",
+      age: 45
+    },
+    {
+      name: "Lila",
+      age: 29
+    },
+    {
+      name: "Mary",
+      age: 68
+    },
+    {
+      name: "Todd",
+      age: 10
+    }
+  ]
+  
+  function ageCheck(peopleArray, cutoffAge){
+    let oldEnough = []
+    for(let i = 0; i < peopleArray.length; i++){
+
+      if(peopleArray[i].age >= cutoffAge){
+        oldEnough.push(peopleArray[i].name)
+        oldEnough2 = oldEnough.join(', ');
+
+      }
+    }
+    return oldEnough2
+  
+  }
+  
+let peopleWhoCanDrink = ageCheck(partyGuestList, 21)
+console.log(`These people can drink: ${peopleWhoCanDrink}.`)
+
+let joinGym = [
+  {
+    name: "Luca",
+    age: 12
+  },
+  {
+    name: "Hazel",
+    age: 12
+  },
+  {
+    name: "Angie",
+    age: 41
+  },
+  {
+    name: "Izzi",
+    age: 2
+  },
+  {
+    name: "Janet",
+    age: 39
+  }
+]
+
+let gymMembership = ageCheck(joinGym, 16)
+console.log(`These people can join the gym: ${gymMembership}.`)
+
