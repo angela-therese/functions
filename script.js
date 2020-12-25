@@ -274,7 +274,7 @@ let spaceship = {
               drinkString = drink.join(', ')
             }
               
-          else if (partyGuests[i].age < 21) {
+          else  {
             //noDrink = noDrink + `${partyGuests[i].name}, `
             noDrink.push(partyGuests[i].name)
             noDrinkString = noDrink.join(', ')
@@ -282,15 +282,15 @@ let spaceship = {
          
       }
 
-      console.log(drinkString)
-      console.log(noDrinkString)
+      console.log(`These people can drink: ${drinkString}.`)
+      console.log(`These people cannot drink: ${noDrinkString}.`)
    //return drink
   //  return noDrink
 
   }
 ageChecker()
 console.log(`${drinkString} can drink.`)
- console.log(`${noDrinkString} can't drink.`)
+console.log(`${noDrinkString} can't drink.`)
 
  
   //Act 7 Pt 2
@@ -305,6 +305,7 @@ console.log(`${drinkString} can drink.`)
       age: 45
     },
     {
+
       name: "Lila",
       age: 29
     },
@@ -361,3 +362,100 @@ let joinGym = [
 let gymMembership = ageCheck(joinGym, 16)
 console.log(`These people can join the gym: ${gymMembership}.`)
 
+//7. Celsius to Fahrenheit
+// You'll be writing two functions: one that converts Celsius to Fahrenheit and the other, vice versa.
+
+// Write a function that takes the temperature in Celsius as the parameter
+// The function should do the following calculation to get the temperature in Fahrenheit: T(F) = T(C) * 1.8 + 32
+// Output the temperature in Fahrenheit to the console
+
+
+let tempC
+let tempF
+
+function convertToF(c) {
+  
+  tempF = c * 1.8 + 32 
+  tempC = c
+ 
+}
+
+convertToF(20.4)
+console.log(`You entered ${tempC}°C. That equals ${tempF}°F.`)
+
+function convertToC(f){
+  tempC = (f - 32) / 1.8
+  tempF = f
+}
+
+
+convertToC(60)
+console.log(`You entered ${tempF}°F. That equals ${tempC}°C.`)
+
+// Example output:
+
+// "You entered [degrees in Celsius] Celsius. That converts to [degrees in Fahrenheit] Fahrenheit." "You entered [degrees in Fahrenheit] Fahrenh
+
+// //Activity 8 
+// Copy and paste the following code into your JavaScript file:
+
+let outsideArray =  [4, 7, 8008, 11, 9, -1];
+
+// In your JavaScript file, create (declare) a function named addThemUp.
+
+let mySum = 0
+function addThemUp(numberArray){
+  for(i = 0; i < numberArray.length; i++){
+    mySum = numberArray[i] + mySum
+  }
+  return mySum
+}
+addThemUp([1, 27, 25, 23])
+console.log(mySum)
+
+// The function should accept one argument: an array of numbers.
+// Inside the function, loop over the array of numbers parameter and add them up to a running sum.
+// The addThemUp function should return the sum.
+// Call addThemUp and pass in outsideArray as an argument.
+// Save the returned value in a variable called mySum.
+// Log mySum to the console.
+// Try changing the numbers in the array or adding new numbers.
+
+
+//activity 9 
+// Copy and paste the following code into your JavaScript file:
+
+let scoresToAverage =  [22, 34, 62, 11, 90, 88, 70, 65, 22, 89, 85, 39, 71, 92, 98, 84];
+
+
+// In your JavaScript file, define a function named findAverage.
+// The function should accept one argument: an array of numbers.
+// Inside the function, loop over the array of numbers parameter and find their average.
+// The findAverage function should return the average of all the numbers.
+// Call findAverage and pass in scoresToAverage as an argument.
+// Save the returned value in a variable called myAverage.
+// Log myAverage to the console.
+// Try adding new numbers to the outsideArray. Your function should still return the correct average no matter how many items are in the array.
+
+// Activity 10 
+// You work for an online clothing retailer. Every time an order ships, your company needs to calculate the cost of shipping so they can charge the customer correctly. Because they need to make this calculation so many times and in so many places, they've asked you to write a function that calculates shipping cost based on package weight, distance to destination, and whether or not the package is oversized.
+// The cost of shipping is always the weight of the package multiplied by the distance it needs to travel, divided by 100.
+// If the package is oversized, it adds ten dollars to the cost of shipping.
+// Write a function that accepts whatever information you need to calculate the cost of shipping and returns the cost as an integer.
+// Execute the function and output the result to the console.
+
+
+function baseRate (packageWeight, miles, oversize){
+  let baseRate = packageWeight * miles / 100;
+  
+  if(oversize === false){
+    let finalRate = baseRate
+    return finalRate.toFixed(2)
+  }
+  else if (oversize === true) {
+    finalRate = baseRate + 10.00
+    return finalRate.toFixed(2)
+  }
+}
+
+console.log(baseRate(2.3, 276, false))
